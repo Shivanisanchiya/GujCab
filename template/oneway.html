@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Gujarat Cab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="dot" />
+
+	<!-- ** CSS Plugins Needed for the Project ** -->
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+	<!-- themefy-icon -->
+	<link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+	<!--Favicon-->
+	<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Main Stylesheet -->
+	<link href="{% static 'assets/style.css' %}" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+	<!-- header -->
+	<header class="banner overlay bg-cover" data-background="images/banner.jpg">
+		<nav class="navbar navbar-expand-md navbar-dark">
+			<div class="container">
+				<a class="navbar-brand px-2" href="/">Guarat Cab</a>
+				<!-- <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+					aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button> -->
+
+				<div class="" id="navigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="cabs">Cabs</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- banner -->
+		<div class="container section">
+			<div class="row">
+				<div class="col-lg-8 text-center mx-auto">
+					<h1 class="text-white mb-3">Cab Booking</h1>
+					<p class="text-white mb-4">Find Suitable cab and make your journey more beautiful and comfortable!</p>
+					<h4 class="text-white mb-3">For One-Way Trip</h4>
+					<div class="position-relative">
+						<form method="post">
+								{% csrf_token %}
+								<label for="name" class="text-white">Enter Your Name</label>
+								<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+								<br>
+								<label for="no" class="text-white">Enter Your Mobile No</label>
+								<input type="number" name="no" id="no" placeholder="Mo No" class="form-control">
+								<br>
+								<label for="From" class="text-white">From City</label>
+								<select name="FromCity" id="FromCity" class="form-control">
+									<option value="ahm">Ahmedabad</option>
+									<option value="anand">Anand</option>
+									<option value="amreli">Amreli</option>
+									<option value="amjar">Anjar</option>
+									<option value="bvn">Bhavnagar</option>
+									<option value="bharuch">Bharuch</option>
+									<option value="bhuj">Bhuj</option>
+									<option value="botad">Botad</option>
+									<option value="dahod">Dahod</option>
+									<option value="deesa">Deesa</option>
+									<option value="dwarka">Dwarka</option>
+									<option value="dabhoi">Dabhoi</option>
+									<option value="gandhinagar">Gandhinagar</option>
+									<option value="gondal">Gondal</option>
+									<option value="gandhidham">Gandhidham</option>
+									<option value="Godhra">Godhra</option>
+									<option value="jamnagar">Jamnagar</option>
+									<option value="Junagadh">Junagadh</option>
+									<option value="jetpur">Jetpur</option>
+									<option value="kachchh">Kutch</option>
+									<option value="lathi">Lathi</option>
+									<option value="limbdi">Limbdi</option>
+									<option value="lunavala">Lunavala</option>
+									<option value="mandavi">Mandavi</option>
+									<option value="morbi">Morbi</option>
+									<option value="Mehsana">Mehsana</option>
+									<option value="navsari">Navsari</option>
+									<option value="nadiad">Nadiad</option>
+									<option value="Porbanadar">Porbandar</option>
+									<option value="patan">Patan</option>
+									<option value="palanpur">Palanpur</option>
+									<option value="Baroda">Vadodra</option>
+									<option value="Verval">Veraval</option>
+									<option value="rajkot">Rajkot</option>
+									<option value="surat">Surat</option>
+									<option value="surendra">Surendra Nagar</option>
+									<option value="songadh">Songadh</option>
+									<option value="talaja">Talaja</option>
+									<option value="una">Una</option>
+									<option value="valsad">Valsad</option>
+								</select>
+									<br>
+								<label for="To" class="text-white">To City</label>
+								<select name="ToCity" id="ToCity" class="form-control">
+									<option value="ahm">Ahmedabad</option>
+									<option value="anand">Anand</option>
+									<option value="amreli">Amreli</option>
+									<option value="amjar">Anjar</option>
+									<option value="bvn">Bhavnagar</option>
+									<option value="bharuch">Bharuch</option>
+									<option value="bhuj">Bhuj</option>
+									<option value="botad">Botad</option>
+									<option value="dahod">Dahod</option>
+									<option value="deesa">Deesa</option>
+									<option value="dwarka">Dwarka</option>
+									<option value="dabhoi">Dabhoi</option>
+									<option value="gandhinagar">Gandhinagar</option>
+									<option value="gondal">Gondal</option>
+									<option value="gandhidham">Gandhidham</option>
+									<option value="Godhra">Godhra</option>
+									<option value="jamnagar">Jamnagar</option>
+									<option value="Junagadh">Junagadh</option>
+									<option value="jetpur">Jetpur</option>
+									<option value="kachchh">Kutch</option>
+									<option value="lathi">Lathi</option>
+									<option value="limbdi">Limbdi</option>
+									<option value="lunavala">Lunavala</option>
+									<option value="mandavi">Mandavi</option>
+									<option value="morbi">Morbi</option>
+									<option value="Mehsana">Mehsana</option>
+									<option value="navsari">Navsari</option>
+									<option value="nadiad">Nadiad</option>
+									<option value="Porbanadar">Porbandar</option>
+									<option value="patan">Patan</option>
+									<option value="palanpur">Palanpur</option>
+									<option value="Baroda">Vadodra</option>
+									<option value="Verval">Veraval</option>
+									<option value="rajkot">Rajkot</option>
+									<option value="surat">Surat</option>
+									<option value="surendra">Surendra Nagar</option>
+									<option value="songadh">Songadh</option>
+									<option value="talaja">Talaja</option>
+									<option value="una">Una</option>
+									<option value="valsad">Valsad</option>
+								</select>
+									<br>
+								<label for="date" class="text-white">Date Of Journey</label>
+								<input type="date" name="date" id="date" placeholder="date" class="form-control">
+								<br>
+								<label for="time" class="text-white">Trip Start Time</label>
+								<input type="time" name="time" id="time" placeholder="time" class="form-control">
+								<br>
+								<label for="time" class="text-white">Cab</label>
+								<select name="cab" id="cab" class="form-control">
+									<option value="sedan" class="form-control">Sedan</option>
+									<option value="minisuv">Mini SUV</option>
+									<option value="suv">SUV</option>
+									<option value="luxury">Premium Luxury</option>
+								</select>
+								<br>
+								<div class="col-12">
+									<button class="btn btn-outline-light btn-lg btn-block py-3 px-5" type="submit">Submit</button>
+								</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<!-- /banner -->
+	</header>
+	<!-- /header -->
+
+	<!-- topics -->
+	<section class="section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 text-center">
+					<h2 class="section-title">Packages</h2>
+				</div>
+				<!-- topic-item -->
+				{% for row in package %}
+				<div class="col-lg-4 col-sm-6 mb-4">
+					<div class="px-4 py-5 bg-white shadow text-center d-block match-height">
+						<h3 class="mb-3 mt-0">{{ row.PackageName }}</h3>
+						<hr>
+						<h4 class="mb-0">Cab :- {{ row.CabType }}</h4>
+						<br>
+						<h5 class="mb-0">Price :- {{ row.Price }}</h5>
+					</div>
+				</div>
+				{% endfor %}
+				<h5>Note : To book tha package contact on this number 8849363070</h5>
+			</div>
+		</div>
+	</section>
+	<!-- /topics -->
+
+	<!-- call to action -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 mb-12">
+					<div class="section px-3 bg-white shadow text-center col-lg-12 col-sm-12 mb-12">
+						<h2 class="mb-4">Contact us thorugh the whatsApp for enquiry.</h2>
+						<!-- <p class="mb-4"><a aria-label="Chat on WhatsApp" href="https://wa.me/918849363070"> <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" />
+						</a></p> -->
+						<a aria-label="Chat on WhatsApp" href="https://wa.me/917285009090"> <img class="col-lg-4 col-sm-4 mb-4" alt="Chat on WhatsApp"  src="{% static 'images/WhatsAppButtonWhiteLarge.png' %}" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /call to action -->
+
+	<!-- footer -->
+	<footer class="section pb-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<!-- <div class="col-md-8 text-md-left text-center">
+					<p class="mb-md-0 mb-4">Copyright © 2020 Designed and Developed by <a
+							href="https://themefisher.com/">themefisher</a></p>
+				</div> -->
+				<div class="col-md-4 text-md-right text-center">
+					<ul class="list-inline">
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-facebook"></i></a></li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-twitter-alt"></i></a></li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-github"></i></a>
+						</li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ** JS Plugins Needed for the Project ** -->
+	<!-- jquiry -->
+	<script src="{% static 'plugins/jquery/jquery-1.12.4.js' %}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- match-height JS -->
+	<script src="{% static 'plugins/match-height/jquery.matchHeight-min.js' %}"></script>
+	<!-- Main Script -->
+	<script src="{% static 'assets/script.js' %}"></script>
+</body>
+
+</html>

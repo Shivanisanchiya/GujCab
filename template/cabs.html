@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Gujarat Cab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="dot" />
+  	<script src="https://kit.fontawesome.com/0c50ceb543.js" crossorigin="anonymous"></script>
+	<!-- ** CSS Plugins Needed for the Project ** -->
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+	<!-- themefy-icon -->
+	<link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+	<!--Favicon-->
+	<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Main Stylesheet -->
+	<link href="{% static 'assets/style.css' %}" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+	<!-- header -->
+	<header class="banner overlay bg-cover" data-background="images/banner.jpg">
+		<nav class="navbar navbar-expand-md navbar-dark">
+			<div class="container">
+				<a class="navbar-brand px-2" href="/">Guarat Cab</a>
+				<!-- <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+					aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button> -->
+						<div class="" id="navigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="faq.html">Cabs</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- banner -->
+		<div class="container section">
+			<div class="row">
+				<div class="col-lg-8 text-center mx-auto">
+					<h1 class="text-white mb-3">Cab Booking</h1>
+					<p class="text-white mb-4">Find Suitable cab and make your journey more beautiful and comfortable!</p>
+					<hr>
+					<a href="oneway"><h4 class="text-white mb-3">For One-Way Trip</h4></a>
+					<br>
+					<hr>
+					<a href="roundtrip"><h4 class="text-white mb-3">For Round Trip</h4></a>
+				</div>
+			</div>
+		</div>
+		<hr>
+		
+		<!-- /banner -->
+	</header>
+	<!-- /header -->
+
+	<!-- topics -->
+	<section class="section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 text-center">
+					<h2 class="section-title"><i>Available Cabs	</i></h2>
+				</div>
+				<!-- topic-item -->
+				{% for row in data %}
+				<div class="col-lg-6 col-sm-6 mb-4">
+					<div class="px-4 py-5 bg-white shadow text-center d-block match-height">
+						<!-- <i class="ti-car icon text-primary d-block mb-4"></i>
+						<h3 class="mb-3 mt-0">Comfortable & Clean Car</h3> -->
+						<!-- <p class="mb-0">Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet</p> -->
+						<img class="w-100 h-80" src="http://127.0.0.1:8000/media/{{ row.img }}" alt="Image">
+						<h4 class="mb-3 mt-0">{{ row.name }}</h4>
+					</div>
+				</div>
+				{% endfor %}
+	</section>
+	<!-- /topics -->
+
+	<!-- call to action -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section px-3 bg-white shadow text-center">
+						<h2 class="mb-4">Contact us thorugh the whatsApp for enquiry</h2>
+						<!-- <p class="mb-4"><a aria-label="Chat on WhatsApp" href="https://wa.me/918849363070"> <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" />
+						</a></p> -->
+						<a aria-label="Chat on WhatsApp" href="https://wa.me/917285009090"> <img class="col-lg-4 col-sm-4 mb-4" alt="Chat on WhatsApp"  src="{% static 'images/WhatsAppButtonWhiteLarge.png' %}" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /call to action -->
+
+	<!-- footer -->
+	<footer class="section pb-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<!-- <div class="col-md-8 text-md-left text-center">
+					<p class="mb-md-0 mb-4">Copyright © 2020 Designed and Developed by <a
+							href="https://themefisher.com/">themefisher</a></p>
+				</div> -->
+				<div class="col-md-4 text-md-right text-center">
+					<ul class="list-inline">
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-facebook"></i></a></li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-twitter-alt"></i></a></li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-github"></i></a>
+						</li>
+						<li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i
+									class="ti-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /footer -->
+
+	<!-- ** JS Plugins Needed for the Project ** -->
+	<!-- jquiry -->
+	<script src="{% static 'plugins/jquery/jquery-1.12.4.js' %}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- match-height JS -->
+	<script src="{% static 'plugins/match-height/jquery.matchHeight-min.js' %}"></script>
+	<!-- Main Script -->
+	<script src="{% static 'assets/script.js' %}"></script>
+</body>
+
+</html>
